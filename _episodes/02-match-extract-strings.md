@@ -17,7 +17,7 @@ keypoints:
 
 For this exercise, we will be using regex101.com to search our code of conduct for various information.
 
-Open a browser and go to the [https://regex101.com/r/e1qcEh/1](https://regex101.com/r/e1qcEh/1) which has a copy of the  the [swcCoC.md file](/data/swcCoC.md) Code of Conduct file loaded as the test string.
+Open a browser and go to the [https://regex101.com/r/e1qcEh/1](https://regex101.com/r/e1qcEh/1) which has a copy of the  the [swcCoC.md file](https://github.com/adyork/regex-intro/tree/gh-pages/data/swcCoC.md) Code of Conduct file loaded as the test string.
 
 For a quick test to see if it's working, type the string `community` into the regular expression box.
 

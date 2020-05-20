@@ -59,7 +59,7 @@ Then there are:
 So, what is `^[Oo]rgani.e` going to match?
 
 > ## Using special characters in regular expression matches
-> What will the regular expression `^[Oo]rgani.e` match?
+> What will the regular expression `^[Oo]rgani.e` match? Type some examples of words that would match in chat. Hint: they don't have to be real words.
 >
 > > ## Solution
 > > ~~~
@@ -71,7 +71,11 @@ So, what is `^[Oo]rgani.e` going to match?
 > > Organike
 > > ~~~
 > > Or, any other string that starts a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, and ends with the letter `e`.
-> > [See solution visulaized on Regexper.com](https://regexper.com/#%5E%5BOo%5Drgani.e)
+> > > Remember:
+> > > - []  Square brackets can be used to define a list or range of characters to be found.
+> > > - `.` Period matches any character.
+> >
+> >  [See solution visulaized on Regexper.com](https://regexper.com/#%5E%5BOo%5Drgani.e)
 > {: .solution}
 {: .challenge}
 

@@ -1,6 +1,6 @@
 ---
-title: "Regular Expressions"
-teaching: 20
+title: "Intro to Regular Expressions"
+teaching: 30
 exercises: 15
 questions:
 - How can you imagine using regular expressions in your work?
@@ -45,14 +45,6 @@ Then there are:
 - `\d` matches any single digit.
 - `\w` matches any part of word character (equivalent to `[A-Za-z0-9]`).
 - `\s` matches any space, tab, or newline.
-- `\` used to escape the following character when that character is a special character. So, for example, a regular expression that found `.com` would be `\.com` because `.` is a special character that matches any character.
-- `^` is an "anchor" which asserts the position at the start of the line. So what you put after the caret will only match if they are the first characters of a line. The caret is also known as a circumflex.
-- `$` is an "anchor" which asserts the position at the end of the line. So what you put before it will only match if they are the last characters of a line.
-- `\b` asserts that the pattern must match at a word boundary. Putting this either side of a word stops the regular expression matching longer variants of words. So:
-	- the regular expression `mark` will match not only `mark` but also find `marking`, `market`, `unremarkable`, and so on.
-	- the regular expression `\bword` will match `word`, `wordless`, and `wordlessly`.
-	- the regular expression `comb\b` will match `comb` and `honeycomb` but not `combine`.
-	- the regular expression `\brespect\b` will match `respect` but not `respectable` or `disrespectful`.
 
 So, what is `^[Oo]rgani.e` going to match?
 
@@ -160,6 +152,16 @@ So, what are these going to match?
 > > > - `{}` Curly brackets match the preceding character the defined number of times.
 > {: .solution}
 {: .challenge}
+
+## Anchor chracters
+
+- `^` is an "anchor" which asserts the position at the start of the line. So what you put after the caret will only match if they are the first characters of a line. The caret is also known as a circumflex.
+- `$` is an "anchor" which asserts the position at the end of the line. So what you put before it will only match if they are the last characters of a line.
+- `\b` asserts that the pattern must match at a word boundary. Putting this either side of a word stops the regular expression matching longer variants of words. So:
+	- the regular expression `mark` will match not only `mark` but also find `marking`, `market`, `unremarkable`, and so on.
+	- the regular expression `\bword` will match `word`, `wordless`, and `wordlessly`.
+	- the regular expression `comb\b` will match `comb` and `honeycomb` but not `combine`.
+	- the regular expression `\brespect\b` will match `respect` but not `respectable` or `disrespectful`.
 
 > ## \b[Oo]rgani.e\b|\b[Oo]rgani.e\w{1}\b
 > What will the regular expression `\b[Oo]rgani.e\b|\b[Oo]rgani.e\w{1}\b` match?
@@ -313,9 +315,6 @@ Then test each other on the answers. If you want to check your logic use [regex1
 > ## Other useful characters
 > - `|` means **or**.
 
-
-> ## Flags
-> - `/i` renders an expression case-insensitive (equivalent to `[A-Za-z]`).
-
 > ## Escaping metacharacters
 > Since regular expressions define some ASCII characters as "metacharacters" that have more than their literal meaning, it is also important to be able to "escape" these metacharacters to use them for their normal, literal meaning. For example, the period `.` means "match any character", but if you want to match a period then you will need to use a `\` in front of it to signal to the regular expression processor that you want to use the period as a plain old period and not a metacharacter. That notation is called "escaping" the special character. The concept of "escaping" special characters is shared across a variety of computational settings, including markdown and Hypertext Markup Language (HTML).
+- `\` is used to escape the following character when that character is a special character. So, for example, a regular expression that found `.com` would be `\.com` because `.` is a special character that matches any character.

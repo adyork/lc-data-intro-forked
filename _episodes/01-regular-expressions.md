@@ -12,7 +12,7 @@ keypoints:
 
 ## Regular expressions
 
-Regular expressions are a concept and an implementation used in many different programming environments for sophisticated pattern matching. They are an incredibly powerful tool that can amplify your capacity to find, manage, and transform data and files. 
+Regular expressions are a concept and an implementation used in many different programming environments for sophisticated pattern matching. They are an incredibly powerful tool that can amplify your capacity to find, manage, and transform data and files.
 
 A regular expression, often abbreviated to *regex*, is a method of using a sequence of characters to define a search to match strings, i.e. "find and replace"-like operations. In computation, a 'string' is a contiguous sequence of symbols or values. For example, a word, a date, a set of numbers (e.g., a phone number), or an alphanumeric value (e.g., an identifier). A string could be any length, ranging from empty (zero characters) to one that spans many lines of text (including line break characters). The terms 'string' and 'line' are sometimes used interchangeably, even when they are not strictly the same thing.
 
@@ -22,7 +22,7 @@ In library searches, we are most familiar with a small part of regular expressio
 - Match patterns that repeat any number of times.
 - Capture the parts of the original string that match your pattern.
 
-Regular expressions rely on the use of literal characters and metacharacters. A metacharacter is any American Standard Code for Information Interchange (ASCII) character that has a special meaning. By using metacharacters and possibly literal characters, you can construct a regex for finding strings or files that match a pattern rather than a specific string. For example, say your organization wants to change the way they display telephone numbers on their website by removing the parentheses around the area code. Rather than search for each specific phone number (that could take forever and be prone to error) or searching for every open parenthesis character (could also take forever and return many false-positives), you could search for the pattern of a phone number. 
+Regular expressions rely on the use of literal characters and metacharacters. A metacharacter is any American Standard Code for Information Interchange (ASCII) character that has a special meaning. By using metacharacters and possibly literal characters, you can construct a regex for finding strings or files that match a pattern rather than a specific string. For example, say your organization wants to change the way they display telephone numbers on their website by removing the parentheses around the area code. Rather than search for each specific phone number (that could take forever and be prone to error) or searching for every open parenthesis character (could also take forever and return many false-positives), you could search for the pattern of a phone number.
 
 Since regular expressions defines some ASCII characters as "metacharacters" that have more than their literal meaning, it is also important to be able to "escape" these metacharacters to use them for their normal, literal meaning. For example, the period `.` means "match any character", but if you want to match a period then you will need to use a `\` in front of it to signal to the regular expression processor that you want to use the period as a plain old period and not a metacharacter. That notation is called "escaping" the special character. The concept of "escaping" special characters is shared across a variety of computational settings, including markdown and Hypertext Markup Language (HTML).
 
@@ -56,10 +56,10 @@ Then there are:
 	- the regular expression `comb\b` will match `comb` and `honeycomb` but not `combine`.
 	- the regular expression `\brespect\b` will match `respect` but not `respectable` or `disrespectful`.
 
-So, what is `^[Oo]rgani.e\b` going to match?
+So, what is `^[Oo]rgani.e` going to match?
 
 > ## Using special characters in regular expression matches
-> What will the regular expression `^[Oo]rgani.e\b` match?
+> What will the regular expression `^[Oo]rgani.e` match?
 >
 > > ## Solution
 > > ~~~
@@ -173,14 +173,14 @@ So, what are these going to match?
 This logic is useful when you have lots of files in a directory, when those files have logical file names, and when you want to isolate a selection of files. It can be used for looking at cells in spreadsheets for certain values, or for extracting some data from a column of a spreadsheet to make new columns. There are many other contexts in which regex is useful when using a computer to search through a document, spreadsheet, or file structure. Some real-world use cases for regex are included on an [ACRL Tech Connect blog](https://acrl.ala.org/techconnect/post/fear-no-longer-regular-expressions/) .
 
 
-To embed this knowledge we won't - however - be using computers. Instead we'll use pen and paper for now. 
+To embed this knowledge we won't - however - be using computers. Instead we'll use pen and paper for now.
 
 
 ### Exercise
 
-Work in teams of four to six on the exercises below. When you think you have the right answer, check it against the solution. 
+Work in teams of four to six on the exercises below. When you think you have the right answer, check it against the solution.
 
-When you finish, split your team into two groups and write each other some tests. These should include a) strings you want the other team to write regex for and b) regular expressions you want the other team to work out what they would match. 
+When you finish, split your team into two groups and write each other some tests. These should include a) strings you want the other team to write regex for and b) regular expressions you want the other team to work out what they would match.
 
 Then test each other on the answers. If you want to check your logic use [regex101](https://regex101.com/), [myregexp](http://myregexp.com/), [regex pal](http://www.regexpal.com/) or [regexper.com](http://regexper.com/): the first three help you see what text your regular expression will match, the latter visualises the workflow of a regular expression.
 
@@ -231,11 +231,11 @@ Then test each other on the answers. If you want to check your logic use [regex1
 > > \b[Cc]olou?r\b|\bCOLOU?R\b
 > > /colou?r/i
 > > ~~~
-> > In real life, you *should* only come across the case insensitive variations `colour`, `color`, `Colour`, `Color`, `COLOUR`, and `COLOR` (rather than, say, `coLour`). So based on what we know, the logical regular expression is `\b[Cc]olou?r\b|\bCOLOU?R\b`. 
-> > 
+> > In real life, you *should* only come across the case insensitive variations `colour`, `color`, `Colour`, `Color`, `COLOUR`, and `COLOR` (rather than, say, `coLour`). So based on what we know, the logical regular expression is `\b[Cc]olou?r\b|\bCOLOU?R\b`.
+> >
 > > An alternative more elegant option we've not discussed is to take advantage of the `/` delimiters and add an 'ignore case' flag.
 > > To use these flags, include `/` delimiters before and after the expression then letters after to raise each flag (where `i` is
-> > 'ignore case'): 
+> > 'ignore case'):
 > > so `/colou?r/i` will match all case insensitive variants of `colour` and `color`.
 > {: .solution}
 {: .challenge}
@@ -304,4 +304,3 @@ Then test each other on the answers. If you want to check your logic use [regex1
 > > Without word boundaries you will find that this matches any text you put before `British` or `Manchester`. Nevertheless, the regular expression does a good job on the first look up and may be need to be refined on a second, depending on your data.
 > {: .solution}
 {: .challenge}
-

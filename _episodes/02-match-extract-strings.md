@@ -15,11 +15,11 @@ keypoints:
 
 # Exercise Using Regex101.com
 
-For this exercise, open a browser and go to [https://regex101.com](https://regex101.com). 
+For this exercise, we will be using regex101.com to search our code of conduct for various information.
 
-Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree/gh-pages/data/swcCoC.md), copy it, and paste it into the test string box.
+Open a browser and go to the [https://regex101.com/r/e1qcEh/1](https://regex101.com/r/e1qcEh/1) which has a copy of the  the [swcCoC.md file](/data/swcCoC.md) Code of Conduct file loaded as the test string.
 
-For a quick test to see if it's working, type the string `community` into the regular expression box. 
+For a quick test to see if it's working, type the string `community` into the regular expression box.
 
 If you look in the box on the right of the screen, you see that the expression matches six instances of the string 'community' (the instances are also highlighted within the text).
 
@@ -27,7 +27,7 @@ If you look in the box on the right of the screen, you see that the expression m
 > Type `community `. You get three matches. Why not six?
 > > ## Solution
 > >
-> > The string 'community-led' matches the first search, but drops out of this result because the space does not match the character `-`. 
+> > The string 'community-led' matches the first search, but drops out of this result because the space does not match the character `-`.
 > >
 > {: .solution}
 {: .challenge}
@@ -36,7 +36,7 @@ If you look in the box on the right of the screen, you see that the expression m
 > If you want to match 'community-led' by adding other regex characters to the expression `community`, what would they be?
 > > ## Solution
 > >
-> > For instance, `\S+\b`. This would match one or more non-space characters followed by a word boundary. 
+> > For instance, `\S+\b`. This would match one or more non-space characters followed by a word boundary.
 > >
 > {: .solution}
 {: .challenge}
@@ -89,7 +89,7 @@ If you look in the box on the right of the screen, you see that the expression m
 
 # Exercise finding email addresses using regex101.com
 
-For this exercise, open a browser and go to [https://regex101.com](https://regex101.com). 
+For this exercise, open a browser and go to [https://regex101.com](https://regex101.com).
 
 Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree/gh-pages/data/swcCoC.md), copy it, and paste it into the test string box.
 
@@ -160,13 +160,13 @@ What to consider:
 > > `\d` matches digits
 > >
 > > `{3}` matches 3 digits
-> > 
+> >
 > > `-` matches the character '-'
 > >
 > > `\d` matches any digit
 > >
 > > `{4}` matches 4 digits.
-> > 
+> >
 > >This expression should find three matches in the document.
 > {: .solution}
 {: .challenge}
@@ -180,7 +180,7 @@ What to consider:
 > > `\d` matches digits
 > >
 > > `{3}` matches 3 digits
-> > 
+> >
 > > `-` matches the character '-'
 > >
 > > `\d` matches any digit
@@ -202,13 +202,13 @@ What to consider:
 > > `\d` matches digits
 > >
 > > `{3}` matches 3 digits
-> > 
+> >
 > > `\)` escape character with the parenthesis as a straightforward character match
 > >
 > > ` ?` matches zero or one spaces
-> > 
+> >
 > > See the previous exercise for the explanation of the rest of the expression.
-> > 
+> >
 > > This expression should find two matches in the document.
 > {: .solution}
 {: .challenge}
@@ -226,18 +226,18 @@ What to consider:
 > > `{1,3}` matches 1 to 3 digits
 > >
 > > ` ?` matches zero or one spaces
-> > 
+> >
 > > See the previous exercise for the explanation of the rest of the expression.
-> > 
+> >
 > > This expression should find one match in the document.
 > {: .solution}
 {: .challenge}
 
 
 > ## Using regular expressions when working with files and directories
-> 
-> One of the reasons we stress the value of consistent and predictable directory and filenaming conventions is that working in this way enables you to use the computer to select files based on the characteristics of their file names. For example, if you have a bunch of files where the first four digits are the year and you only want to do something with files from '2017', then you can. Or if you have 'journal' somewhere in a filename when you have data about journals, you can use the computer to select just those files. Equally, using plain text formats means that you can go further and select files or elements of files based on characteristics of the data *within* those files. See Workshop Overview: [File Naming & Formatting](https://librarycarpentry.org/lc-overview/06-file-naming-formatting/index.html) for further background. 
-> 
+>
+> One of the reasons we stress the value of consistent and predictable directory and filenaming conventions is that working in this way enables you to use the computer to select files based on the characteristics of their file names. For example, if you have a bunch of files where the first four digits are the year and you only want to do something with files from '2017', then you can. Or if you have 'journal' somewhere in a filename when you have data about journals, you can use the computer to select just those files. Equally, using plain text formats means that you can go further and select files or elements of files based on characteristics of the data *within* those files. See Workshop Overview: [File Naming & Formatting](https://librarycarpentry.org/lc-overview/06-file-naming-formatting/index.html) for further background.
+>
 {: .callout}
 
 # Extracting a substring in Google Sheets using regex

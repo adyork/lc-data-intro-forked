@@ -29,9 +29,9 @@ Regular expressions rely on the use of literal characters and metacharacters. A 
 >  Most regular expression implementations employ similar syntaxes and metacharacters (generally influenced by the regex syntax of a programming language called Perl), and they behave similarly for most pattern-matching in this lesson. But there are differences, often subtle, in each, so it's always a good practice to read the application or language's documentation whenever available, especially when you start using more advanced regex features. Some programs, notably many UNIX command line programs (for more on UNIX see our '[Shell Lesson](https://librarycarpentry.org/lc-shell/)'), use an older regex standard (called 'POSIX regular expressions') which is less feature-rich and uses different metacharacters than Perl-influenced implementations. For the purposes of our lesson, you don't need to worry too much about all this, but if you want to follow up on this see [this detailed syntax comparison](https://gist.github.com/CMCDragonkai/6c933f4a7d713ef712145c5eb94a1816).
 {: .callout}
 
-A very simple use of a regular expression would be to locate the same word spelled two different ways. For example the regular expression `organi[sz]e` matches both `organise` and `organize`. But because it locates all matches for the pattern in the file, not just for that word, it would also match `reorganise`, `reorganize`, `organises`, `organizes`, `organised`, `organized`, etc.
-
 ### Learning common regex metacharacters
+
+
 Square brackets can be used to define a list or range of characters to be found. So:
 
 - `[ABC]` matches A or B or C.
@@ -39,17 +39,18 @@ Square brackets can be used to define a list or range of characters to be found.
 - `[A-Za-z]` matches any upper or lower case letter.
 - `[A-Za-z0-9]` matches any upper or lower case letter or any digit.
 
-Then there are:
+A very simple use of a regular expression would be to locate the same word spelled two different ways. For example the regular expression `organi[sz]e` matches both `organise` and `organize`. But because it locates all matches for the pattern in the file, not just for that word, it would also match `reorganise`, `reorganize`, `organises`, `organizes`, `organised`, `organized`, etc.
+
+Then there are the metacharacters:
 
 - `.` matches any character.
 - `\d` matches any single digit.
 - `\w` matches any part of word character (equivalent to `[A-Za-z0-9]`).
 - `\s` matches any space, tab, or newline.
 
-So, what is `^[Oo]rgani.e` going to match?
 
 > ## Using special characters in regular expression matches
-> What will the regular expression `^[Oo]rgani.e` match? Type some examples of words that would match in chat. Hint: they don't have to be real words.
+> What will the regular expression `[Oo]rgani.e` match? Type some examples of words that would match in chat. Hint: they don't have to be real words.
 >
 > > ## Solution
 > > ~~~
@@ -60,9 +61,8 @@ So, what is `^[Oo]rgani.e` going to match?
 > > organife
 > > Organike
 > > ~~~
-> > Or, any other string that starts a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, and ends with the letter `e`.
+> > Or, any other string that begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, and ends with the letter `e`.
 > > > Remember:
-> > > - `^` is an "anchor" which asserts the position at the start of the line.
 > > > - `[]`  Square brackets can be used to define a list or range of characters to be found.
 > > > - `.` Period matches any character.
 > >

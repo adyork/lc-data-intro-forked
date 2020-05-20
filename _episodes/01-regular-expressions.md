@@ -16,15 +16,13 @@ Regular expressions are a concept and an implementation used in many different p
 
 A regular expression, often abbreviated to *regex*, is a method of using a sequence of characters to define a search to match strings, i.e. "find and replace"-like operations. In computation, a 'string' is a contiguous sequence of symbols or values. For example, a word, a date, a set of numbers (e.g., a phone number), or an alphanumeric value (e.g., an identifier). A string could be any length, ranging from empty (zero characters) to one that spans many lines of text (including line break characters). The terms 'string' and 'line' are sometimes used interchangeably, even when they are not strictly the same thing.
 
-In library searches, we are most familiar with a small part of regular expressions known as the "wild card character," but there are many more features to the complete regular expressions syntax. Regular expressions will let you:
+Novice regular expression learners are most familiar with a small part of regular expressions known as the "wild card character," but there are many more features to the complete regular expressions syntax. Regular expressions will let you:
 
 - Match on types of characters (e.g. 'upper case letters', 'digits', 'spaces', etc.).
 - Match patterns that repeat any number of times.
 - Capture the parts of the original string that match your pattern.
 
 Regular expressions rely on the use of literal characters and metacharacters. A metacharacter is any American Standard Code for Information Interchange (ASCII) character that has a special meaning. By using metacharacters and possibly literal characters, you can construct a regex for finding strings or files that match a pattern rather than a specific string. For example, say your organization wants to change the way they display telephone numbers on their website by removing the parentheses around the area code. Rather than search for each specific phone number (that could take forever and be prone to error) or searching for every open parenthesis character (could also take forever and return many false-positives), you could search for the pattern of a phone number.
-
-Since regular expressions defines some ASCII characters as "metacharacters" that have more than their literal meaning, it is also important to be able to "escape" these metacharacters to use them for their normal, literal meaning. For example, the period `.` means "match any character", but if you want to match a period then you will need to use a `\` in front of it to signal to the regular expression processor that you want to use the period as a plain old period and not a metacharacter. That notation is called "escaping" the special character. The concept of "escaping" special characters is shared across a variety of computational settings, including markdown and Hypertext Markup Language (HTML).
 
 
 > ## Regex Syntax and interoperability
@@ -313,3 +311,6 @@ Then test each other on the answers. If you want to check your logic use [regex1
 
 > ## Flags
 > - `/i` renders an expression case-insensitive (equivalent to `[A-Za-z]`).
+
+> ## Escaping metacharacters
+> Since regular expressions define some ASCII characters as "metacharacters" that have more than their literal meaning, it is also important to be able to "escape" these metacharacters to use them for their normal, literal meaning. For example, the period `.` means "match any character", but if you want to match a period then you will need to use a `\` in front of it to signal to the regular expression processor that you want to use the period as a plain old period and not a metacharacter. That notation is called "escaping" the special character. The concept of "escaping" special characters is shared across a variety of computational settings, including markdown and Hypertext Markup Language (HTML).

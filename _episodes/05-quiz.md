@@ -1,5 +1,5 @@
 ---
-title: Multiple Choice Quiz
+title: Self-Multiple Choice Quiz
 teaching: 0
 exercises: 60
 questions:
@@ -12,7 +12,7 @@ keypoints:
 
 # Multiple Choice Quiz
 
-This multiple choice quiz is designed to embed the regex knowledge you learned during this module. We recommend you work through it sometime after class (within a week or so). 
+This multiple choice quiz is designed to embed the regex knowledge you learned during this module. We recommend you work through it sometime after class (within a week or so).
 
 > ## Q1. What is the special character that matches zero or more characters?
 >
@@ -23,7 +23,7 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **C**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
@@ -36,12 +36,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **A**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q3. How do you match the string `Confident` appearing at the beginning of a line?
-> 
+>
 > * A) `$Confident`
 > * B) `^Confident`
 > * C) `#Confident`
@@ -49,12 +49,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **B**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q4. How do you match the word `Confidential` appearing at the beginning of a line?
-> 
+>
 > * A) `^Confidential\d`
 > * B) `^Confidential\b`
 > * C) `^Confidential\w`
@@ -62,12 +62,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **B**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q5. What does the regular expression `[a-z]` match?
-> 
+>
 > * A) `The characters a and z only`
 > * B) `All characters between the ranges a to z and A to Z`
 > * C) `All characters between the range a to z`
@@ -75,12 +75,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **C**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q6. Which of these will match the strings `revolution`, `revolutionary`, and `revolutionaries`?
-> 
+>
 > * A) `revolution[a-z]?`
 > * B) `revolution[a-z]*`
 > * C) `revolution[a-z]+`
@@ -88,12 +88,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **B**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q7. Which of these will match the strings `revolution`, `Revolution`, and their plural variants only?
-> 
+>
 > * A) `[rR]evolution[s]+`
 > * B) `revolution[s]?`
 > * C) `[rR]evolution[s]?`
@@ -101,7 +101,7 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **C**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
@@ -114,7 +114,7 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **A**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
@@ -127,12 +127,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **C**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q10. What do we put after a character to match strings where that character appears two to four times in sequence?
-> 
+>
 > * A) `{2,4}`
 > * B) `{2-4}`
 > * C) `[2,4]`
@@ -140,7 +140,7 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **A**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
@@ -152,12 +152,12 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **B**
-> > 
+> >
 > {: .solution}
 {: .challenge}
 
 > ## Q12. If brackets are used to define a group, what would match the regular expression `(,\s[0-9]{1,4}){4},\s[0-9]{1,3}\.[0-9]`?
-> 
+>
 > * A) `, 135, 1155, 915, 513, 18.8`
 > * B) `, 135, 11557, 915, 513, 18.8`
 > * C) `, 135, 1155, 915, 513, 188`
@@ -165,6 +165,6 @@ This multiple choice quiz is designed to embed the regex knowledge you learned d
 > > ## Answer
 > >
 > > **A**
-> > 
+> >
 > {: .solution}
 {: .challenge}

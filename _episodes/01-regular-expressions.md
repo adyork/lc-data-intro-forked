@@ -70,7 +70,8 @@ So, what is `^[Oo]rgani.e` going to match?
 > > ~~~
 > > Or, any other string that starts a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, and ends with the letter `e`.
 > > > Remember:
-> > > - []  Square brackets can be used to define a list or range of characters to be found.
+> > > - `^` is an "anchor" which asserts the position at the start of the line.
+> > > - `[]`  Square brackets can be used to define a list or range of characters to be found.
 > > > - `.` Period matches any character.
 > >
 > >  [See solution visulaized on Regexper.com](https://regexper.com/#%5E%5BOo%5Drgani.e)
@@ -100,8 +101,8 @@ So, what are these going to match?
 > {: .solution}
 {: .challenge}
 
-> ## [Oo]rgani.e\w+$
-> What will the regular expression `[Oo]rgani.e\w+$` match?
+> ## [Oo]rgani.e\w+
+> What will the regular expression `[Oo]rgani.e\w+` match?
 >
 > > ## Solution
 > > ~~~
@@ -114,8 +115,22 @@ So, what are these going to match?
 > {: .solution}
 {: .challenge}
 
-> ## ^[Oo]rgani.e\w?\b
-> What will the regular expression `^[Oo]rgani.e\w?\b` match?
+> ## [Oo]rgani.e\w+
+> What won't the regular expression `[Oo]rgani.e\w+` match?
+>
+> > ## Solution
+> > ~~~
+> > organise
+> > Organize
+> > organift
+> > ~~~
+> > > Remember:
+> > > - `+` means the preceading character must match one or more times so there have to be one or more word characters after e.
+> {: .solution}
+{: .challenge}
+
+> ## [Oo]rgani.e\w?
+> What will the regular expression `[Oo]rgani.e\w?` match?
 >
 > > ## Solution
 > > ~~~
@@ -124,26 +139,14 @@ So, what are these going to match?
 > > organifer
 > > Organi2ek
 > > ~~~
-> > Or, any other string that starts a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e`, and ends with **zero or one** characters from the range `[A-Za-z0-9]`.
+> > Or, any other string begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e`, and ends with **zero or one** characters from the range `[A-Za-z0-9]`.
+> > > Remeber:
+> > > - `?` matches when the preceding character appears zero or one time.
 > {: .solution}
 {: .challenge}
 
-> ## ^[Oo]rgani.e\w?$
-> What will the regular expression `^[Oo]rgani.e\w?$` match?
->
-> > ## Solution
-> > ~~~
-> > organise
-> > Organized
-> > organifer
-> > Organi2ek
-> > ~~~
-> > Or, any other string that starts and ends a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e` and **zero or one characters** from the range `[A-Za-z0-9]`.
-> {: .solution}
-{: .challenge}
-
-> ## \b[Oo]rgani.e\w{2}\b
-> What will the regular expression `\b[Oo]rgani.e\w{2}\b` match?
+> ## [Oo]rgani.e\w{2}
+> What will the regular expression `[Oo]rgani.e\w{2}` match?
 >
 > > ## Solution
 > > ~~~
@@ -153,6 +156,8 @@ So, what are these going to match?
 > > Organi2ek1
 > > ~~~
 > > Or, any other string that begins with a letter `o` in lower or capital case after a word boundary, proceeds with `rgani`, has any character in the 7th position, follows with letter `e`, and ends with **two** characters from the range `[A-Za-z0-9]`.
+> > > Remeber:
+> > > - `{}` Curly brackets match the preceding character the defined number of times.
 > {: .solution}
 {: .challenge}
 

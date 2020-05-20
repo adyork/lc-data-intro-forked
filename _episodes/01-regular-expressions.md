@@ -85,8 +85,6 @@ Other useful special characters are:
 - `+` matches the preceding element one or more times. For example, ab+c matches "abc", "abbbc" but not "ac".
 - `?` matches when the preceding character appears zero or one time.
 - `{VALUE}` matches the preceding character the number of times defined by VALUE; ranges, say, 1-6, can be specified with the syntax `{VALUE,VALUE}`, e.g. `\d{1,9}` will match any number between one and nine digits in length.
-- `|` means **or**.
-- `/i` renders an expression case-insensitive (equivalent to `[A-Za-z]`).
 
 So, what are these going to match?
 
@@ -308,3 +306,10 @@ Then test each other on the answers. If you want to check your logic use [regex1
 > > Without word boundaries you will find that this matches any text you put before `British` or `Manchester`. Nevertheless, the regular expression does a good job on the first look up and may be need to be refined on a second, depending on your data.
 > {: .solution}
 {: .challenge}
+
+> ## Other useful characters
+> - `|` means **or**.
+
+
+> ## Flags
+> - `/i` renders an expression case-insensitive (equivalent to `[A-Za-z]`).

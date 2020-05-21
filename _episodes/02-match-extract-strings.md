@@ -127,7 +127,7 @@ Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree
 
 > ## Finish the expression
 > Finish the regular expression to match the whole email address.
-> Start with the first part of the expression we came up with https://regex101.com/r/f49JFl/1/
+> Start with the first part of the expression we came up with https://regex101.com/r/f49JFl/2
 >
 >  Type your solutions in chat when you are done.
 >

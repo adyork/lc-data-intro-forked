@@ -87,6 +87,16 @@ How could you add this timestamp to indicate it is in UTC time?
 > Example using: https://regex101.com/r/39aKyj/2
 {: .callout}
 
+## Parsing species names out of your data
+
+Start with: https://regex101.com/r/Q00X85/1 which contains a field containting species name and sample number combined.
+
+Goal: Create a comma delimited file with the species name alone (Genus species) so that we can run this through a taxanomic name checker (e.g. [WoRMS taxa match tool](http://marinespecies.org/aphia.php?p=match_) or [GBIF's Name normalizer](https://www.gbif.org/tools/species-lookup))
+> e.g. `Porites_australiensis_5912` would be `Porites australiensis`
+
+> Solution: https://regex101.com/r/Q00X85/2
+
+More compltex example of how to use subgroups and OR statements to still return lines with no match. https://regex101.com/r/zwAhOS/1
 
 # Exercises
 

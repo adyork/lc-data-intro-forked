@@ -21,3 +21,7 @@ root: .
 - `{VALUE}` matches the preceding character the number of times define by VALUE; ranges can be specified with the syntax `{VALUE,VALUE}`.
 - `|` means or.
 
+## Resources
+- Online tools such as: [Regxr](https://regexr.com/), [regex101](https://regex101.com/), [rexegper](http://regexper.com/), [myregexp](http://myregexp.com/), or whichever service you prefer.
+- Test yourself with RegexCrossword.com or via the quiz and exercises in this lesson.
+- You can visualize your regular expressions [e.g. see `[Oo]rgani.e` visulaized on Regexper.com](https://regexper.com/#%5E%5BOo%5Drgani.e)

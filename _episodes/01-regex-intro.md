@@ -118,6 +118,8 @@ So, what are these going to match?
 > > ~~~
 > > > Remember:
 > > > - `+` means the preceading character must match one or more times so there have to be one or more word characters after e.
+> >
+> > See some possible matches and non-matches at https://regex101.com/r/9lPHAH/1
 > {: .solution}
 {: .challenge}
 
@@ -153,18 +155,69 @@ So, what are these going to match?
 > {: .solution}
 {: .challenge}
 
+
+
 ## Anchor chracters
 
 - `^` is an "anchor" which asserts the position at the start of the line. So what you put after the caret will only match if they are the first characters of a line. The caret is also known as a circumflex.
 - `$` is an "anchor" which asserts the position at the end of the line. So what you put before it will only match if they are the last characters of a line.
-- `\b` asserts that the pattern must match at a word boundary. Putting this either side of a word stops the regular expression matching longer variants of words. So:
-	- the regular expression `mark` will match not only `mark` but also find `marking`, `market`, `unremarkable`, and so on.
-	- the regular expression `\bword` will match `word`, `wordless`, and `wordlessly`.
-	- the regular expression `comb\b` will match `comb` and `honeycomb` but not `combine`.
-	- the regular expression `\brespect\b` will match `respect` but not `respectable` or `disrespectful`.
+- `\b` asserts that the pattern must match at a word boundary. Putting this either side of a word stops the regular expression matching longer variants of words.
 
-> ## \b[Oo]rgani.e\b|\b[Oo]rgani.e\w{1}\b
-> What will the regular expression `\b[Oo]rgani.e\b|\b[Oo]rgani.e\w{1}\b` match?
+### Working with word boundaries \b
+
+- the regular expression `mark` will match not only `mark` but also find `mark` in `marking`, `market`, `unremarkable`, and so on.
+- the regular expression `\bword` will match `word`, `wordless`, and `wordlessly`.
+- the regular expression `comb\b` will match `comb` in `honeycomb` but not `combine`.
+- the regular expression `\brespect\b` will match `respect` but not `respectable` or `disrespectful`.
+- the boundary for \b includes file path separators like slashes or dots for file extensions.  So for test string /home/adyork/marketsurvey/leftmymark.csv
+  - `mark\b` would match `mark` before the .csv file extension /home/adyork/marketsurvey/leftmy<b>mark</b>.csv
+  - `\bmark` would match `mark` in the beggining of the folder name /home/adyork/<b>mark</b>etsurvey/leftmymark.csv
+
+### Live coding demo for anchor characters
+https://regex101.com/r/JQCWIV/5
+
+
+
+### Exercises
+
+> ## Matching digits
+> How do you match any four-digit string anywhere?
+
+
+> ## Part 1: Matching dates
+> How would you match the date format `yyyy-MM-dd` e.g. 2020-05-21?  Write your answers in chat.
+>
+> > ## Solution
+> > ~~~
+> > \d{4}-\d{2}-\d{2}
+> > \d+-\d+-\d+
+> > ~~~
+> {: .solution}
+{: .challenge}
+
+### Part 2: Breakout groups
+
+We will put you into small groups in Zoom breakout rooms.  Come up with a solution for   There is more than one right answer! Please share your answers in chat.
+
+> ## Part 2: Matching multiple date formats
+> How would you match the date format `MM/dd/yyyy` or `MM/dd/yy` at the end of a line only?
+>
+> > ## Solution
+> > ~~~
+> > \d{2}/\d{2}/\d{2,4}$
+> > ~~~
+> > Note this will also find strings such as `31-01-198` at the end of a line, so you may wish to check your data and revise the expression to exclude false positives. Depending on your data, you may choose to add word bounding at the start of the expression.
+> {: .solution}
+{: .challenge}
+
+## Testing on an example
+https://regex101.com/r/2mr2t3/6
+
+> ## Using OR to match more than one pattern
+> - `|` means **or**.
+
+> ## ^[Oo]rgani.e$|^[Oo]rgani.e\w$
+> What will the regular expression `^[Oo]rgani.e$|^[Oo]rgani.e\w$` match?
 >
 > > ## Solution
 > > ~~~
@@ -174,52 +227,10 @@ So, what are these going to match?
 > > organifed
 > > ~~~
 > > Or, any other string that begins with a letter `o` in lower or capital case after a word boundary, proceeds with `rgani`, has any character in the 7th position, and end with letter `e`, or any other string that begins with a letter `o` in lower or capital case after a word boundary, proceeds with `rgani`, has any character in the 7th position, follows with letter `e`, and ends with a single character from the range `[A-Za-z0-9]`.
+> > See this example at https://regex101.com/r/2Oama7/1
 > {: .solution}
 {: .challenge}
 
-This logic is useful when you have lots of files in a directory, when those files have logical file names, and when you want to isolate a selection of files. It can be used for looking at cells in spreadsheets for certain values, or for extracting some data from a column of a spreadsheet to make new columns. There are many other contexts in which regex is useful when using a computer to search through a document, spreadsheet, or file structure. Some real-world use cases for regex are included on an [ACRL Tech Connect blog](https://acrl.ala.org/techconnect/post/fear-no-longer-regular-expressions/) .
-
-
-To embed this knowledge we won't - however - be using computers. Instead we'll use pen and paper for now.
-
-
-### Exercise
-
-Work in teams of four to six on the exercises below. When you think you have the right answer, check it against the solution.
-
-When you finish, split your team into two groups and write each other some tests. These should include a) strings you want the other team to write regex for and b) regular expressions you want the other team to work out what they would match.
-
-Then test each other on the answers. If you want to check your logic use [regex101](https://regex101.com/), [myregexp](http://myregexp.com/), [regex pal](http://www.regexpal.com/) or [regexper.com](http://regexper.com/): the first three help you see what text your regular expression will match, the latter visualises the workflow of a regular expression.
-
-> ## Using square brackets
-> What will the regular expression `Fr[ea]nc[eh]` match?
->
-> > ## Solution
-> > ~~~
-> > French
-> > France
-> > Frence
-> > Franch
-> > ~~~
-> > Note that the way this regular expression is constructed, it will match misspellings such as `Franch` and `Frence`. Lacking an "anchor" such as `^` or `\b`, this will also find strings where there are characters to either side of the regular expression, such as `in French`, `France's`, `French-fried`.
-> {: .solution}
-{: .challenge}
-
-> ## Using dollar signs
-> What will the regular expression `Fr[ea]nc[eh]$` match?
->
-> > ## Solution
-> > ~~~
-> > French
-> > France
-> > Frence
-> > Franch
-> > ~~~
-> > This will match the pattern only when it appears at the end of a line. It will also find strings with other characters coming _before_ the pattern, for example, `in French` or `faux-French`.
-> {: .solution}
-{: .challenge}
-
-> ## Introducing options
 > What would match the strings `French` and `France` that appear at the beginning of a line?
 >
 > > ## Solution
@@ -229,92 +240,3 @@ Then test each other on the answers. If you want to check your logic use [regex1
 > > This will also find words where there were characters after `French` such as `Frenchness`.
 > {: .solution}
 {: .challenge}
-
-> ## Case insensitivity
-> How do you match the whole words `colour` and `color` (case insensitive)?
->
-> > ## Solutions
-> > ~~~
-> > \b[Cc]olou?r\b|\bCOLOU?R\b
-> > /colou?r/i
-> > ~~~
-> > In real life, you *should* only come across the case insensitive variations `colour`, `color`, `Colour`, `Color`, `COLOUR`, and `COLOR` (rather than, say, `coLour`). So based on what we know, the logical regular expression is `\b[Cc]olou?r\b|\bCOLOU?R\b`.
-> >
-> > An alternative more elegant option we've not discussed is to take advantage of the `/` delimiters and add an 'ignore case' flag.
-> > To use these flags, include `/` delimiters before and after the expression then letters after to raise each flag (where `i` is
-> > 'ignore case'):
-> > so `/colou?r/i` will match all case insensitive variants of `colour` and `color`.
-> {: .solution}
-{: .challenge}
-
-> ## Word boundaries
-> How would you find the whole word `headrest` and or `head rest` but not <code>head&nbsp;&nbsp;rest</code> (that is, with two spaces between `head` and `rest`?
->
-> > ## Solution
-> > ~~~
-> > \bhead ?rest\b
-> > ~~~
-> > Note that although `\bhead\s?rest\b` does work, it will also match zero or one tabs or newline characters between `head` and `rest`. So again, although in most real world cases it will be fine, it isn't strictly correct.
-> {: .solution}
-{: .challenge}
-
-> ## Matching non-linguistic patterns
-> How would you find a string that ends with four letters preceded by at least one zero?
->
-> > ## Solution
-> > ~~~
-> > 0+[A-Za-z]{4}\b
-> > ~~~
-> {: .solution}
-{: .challenge}
-
-> ## Matching digits
-> How do you match any four-digit string anywhere?
->
-> > ## Solution
-> > ~~~
-> > \d{4}
-> > ~~~
-> > Note: this will also match four-digit strings within longer strings of numbers and letters.
-> {: .solution}
-{: .challenge}
-
-> ## Matching dates
-> How would you match the date format `dd-MM-yyyy`?
->
-> > ## Solution
-> > ~~~
-> > \b\d{2}-\d{2}-\d{4}\b
-> > ~~~
-> > Depending on your data, you may choose to remove the word bounding.
-> {: .solution}
-{: .challenge}
-
-> ## Matching multiple date formats
-> How would you match the date format `dd-MM-yyyy` or `dd-MM-yy` at the end of a line only?
->
-> > ## Solution
-> > ~~~
-> > \d{2}-\d{2}-\d{2,4}$
-> > ~~~
-> > Note this will also find strings such as `31-01-198` at the end of a line, so you may wish to check your data and revise the expression to exclude false positives. Depending on your data, you may choose to add word bounding at the start of the expression.
-> {: .solution}
-{: .challenge}
-
-> ## Matching publication formats
-> How would you match publication formats such as `British Library : London, 2015` and `Manchester University Press: Manchester, 1999`?
->
-> > ## Solution
-> > ~~~
-> > .* ?: .*, \d{4}
-> > ~~~
-> > Without word boundaries you will find that this matches any text you put before `British` or `Manchester`. Nevertheless, the regular expression does a good job on the first look up and may be need to be refined on a second, depending on your data.
-> {: .solution}
-{: .challenge}
-
-> ## Other useful characters
-> - `|` means **or**.
-
-> ## Escaping metacharacters
-> Since regular expressions define some ASCII characters as "metacharacters" that have more than their literal meaning, it is also important to be able to "escape" these metacharacters to use them for their normal, literal meaning. For example, the period `.` means "match any character", but if you want to match a period then you will need to use a `\` in front of it to signal to the regular expression processor that you want to use the period as a plain old period and not a metacharacter. That notation is called "escaping" the special character. The concept of "escaping" special characters is shared across a variety of computational settings, including markdown and Hypertext Markup Language (HTML).
-- `\` is used to escape the following character when that character is a special character. So, for example, a regular expression that found `.com` would be `\.com` because `.` is a special character that matches any character.

@@ -1,5 +1,5 @@
 ---
-title: "Matching & Extracting Exercises"
+title: "Matching & Extracting"
 teaching: 0
 exercises: 15
 questions:
@@ -13,11 +13,11 @@ keypoints:
 - Test yourself with [RegexCrossword.com/](https://regexcrossword.com/) or via the quiz and exercises in this lesson.
 ---
 
-# Finding strings in the Code of Conduct using Regex101.com
+# Exercise Using Regex101.com
 
 For this exercise, we will be using regex101.com to search our code of conduct for various pieces of information.
 
-Open a browser and go to https://regex101.com/r/e1qcEh/1 which has a copy of the  [swcCoC.md](https://github.com/adyork/regex-intro/tree/gh-pages/data/swcCoC.md) Code of Conduct file loaded as the test string.
+Open a browser and go to the [https://regex101.com/r/e1qcEh/1](https://regex101.com/r/e1qcEh/1) which has a copy of the  the [swcCoC.md file](https://github.com/adyork/regex-intro/tree/gh-pages/data/swcCoC.md) Code of Conduct file loaded as the test string.
 
 For a quick test to see if it's working, type the string `community` into the regular expression box.
 
@@ -41,6 +41,51 @@ If you look in the box on the right of the screen, you see that the expression m
 > {: .solution}
 {: .challenge}
 
+> ## Exploring effect of expressions matching different words
+> Change the expression to `communi` and you get 15 full matches of several words. Why?
+> > ## Solution
+> >
+> > Because the string 'communi' is present in all of those words, including `communi`cation and `communi`ty. Because the expression does not have a word boundary, this expression would also match in`communi`cado, were it present in this text. If you want to test this, type `incommunicado` into the text somewhere and see if it is found.
+> >
+> {: .solution}
+{: .challenge}
+
+> ## Taking capitalization into consideration
+> Type the expression `[Cc]ommuni`. You get 16 matches. Why?
+> > ## Solution
+> >
+> > The word Community is present in the text with a capital `C` and with a lowercase `c` 16 times.
+> >
+> {: .solution}
+{: .challenge}
+
+> ## Regex characters that indicate location
+> Type the expression `^[Cc]ommuni`. You get no matches. Why?
+> > ## Solution
+> >
+> > There is no matching string present at the start of a line. Look at the text and replace the string after the `^` with something that matches a word at the start of a line. Does it find a match?
+> >
+> {: .solution}
+{: .challenge}
+
+> ## Finding plurals
+> Find all of the words starting with Comm or comm that are plural.
+> > ## Solution
+> > ~~~
+> > [Cc]omm\w+s\b
+> > ~~~
+> > `[Cc]` finds capital and lowercase `c`
+> >
+> > `omm` is straightforward character matches
+> >
+> > `\w+` matches the preceding element (a word character) one or more times
+> >
+> > `s` is a straightforward character match
+> >
+> > `\b` ensures the 's' is located at the end of the word.
+> >
+> {: .solution}
+{: .challenge}
 
 # Exercise finding email addresses using regex101.com
 
@@ -77,13 +122,10 @@ Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree
 {: .challenge}
 
 > ## Finish the expression
-> Finish the regular expression to match the whole email address.  Type your answers in chat.
->
 > The string after the "@" could contain any kind of word character, special character or digit in any combination and length as well as the dash. In addition, we know that it will end with two or three characters after a period (`.`) What expression would capture this. Hint: the `.` is also a regex expression, so you'll have to use the escape `\` to express a literal period. Note: for the string after the period, I did not try to match a character, since those rarely appear in the .xx or .xxx at the end of an email address.
-> > ## Solutions
+> > ## Solution
 > > ~~~
 > > [\w.-]+\.[\w]{2,3}
-> > [\w.-]+@[\w.-]+\b
 > > ~~~
 > > See the previous exercise for the explanation of the expression up to the `+`
 > >
@@ -149,10 +191,50 @@ What to consider:
 > {: .solution}
 {: .challenge}
 
+> ## Match a string that includes an area code within parenthesis separated from the rest of the phone number with a space or without a space
+> Start with what we know, which is the most basic format of a phone number: three digits, a dash, and four digits. How would we expand the expression to include a phone number with an area code in parenthesis, separated from the phone number, with or without a space.
+> > ## Solution
+> > ~~~
+> >\(\d{3}\) ?\d{3}-\d{4}
+> > ~~~
+> > `\(` escape character with the parenthesis as straightforward character match
+> >
+> > `\d` matches digits
+> >
+> > `{3}` matches 3 digits
+> >
+> > `\)` escape character with the parenthesis as a straightforward character match
+> >
+> > ` ?` matches zero or one spaces
+> >
+> > See the previous exercise for the explanation of the rest of the expression.
+> >
+> > This expression should find two matches in the document.
+> {: .solution}
+{: .challenge}
+
+> ## Match a phone number containing a country code.
+> Country codes are preceded by a "+" and can have up to three digits. We also have to consider that there may or may not be a space between the country code and anything appearing next.
+> > ## Solution
+> > ~~~
+> >\+\d{1,3} ?\(\d{3}\)\s?\d{3}-\d{4}
+> > ~~~
+> > `\+` escape character with the plus sign as straightforward character match
+> >
+> > `\d` matches digits
+> >
+> > `{1,3}` matches 1 to 3 digits
+> >
+> > ` ?` matches zero or one spaces
+> >
+> > See the previous exercise for the explanation of the rest of the expression.
+> >
+> > This expression should find one match in the document.
+> {: .solution}
+{: .challenge}
+
 # Regex interoperability
 
 How do you match strings in different languages, text editors and the command line?
 
 Languages have various packages and modules for regular expressions.  Regex101.com includes a code generator that will show how your regular expression could be used on your test string with the results printed.
-
-Try going to https://regex101.com/r/2mr2t3/6 and clicking "Code Genererator" in the left panel then "Python" to get to example code: https://regex101.com/r/2mr2t3/6/codegen?language=python

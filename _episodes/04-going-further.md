@@ -15,6 +15,10 @@ keypoints:
 ## Flags
 > - `/i` renders an expression case-insensitive (equivalent to `[A-Za-z]`).
 
+> ## Escaping metacharacters
+> Since regular expressions define some ASCII characters as "metacharacters" that have more than their literal meaning, it is also important to be able to "escape" these metacharacters to use them for their normal, literal meaning. For example, the period `.` means "match any character", but if you want to match a period then you will need to use a `\` in front of it to signal to the regular expression processor that you want to use the period as a plain old period and not a metacharacter. That notation is called "escaping" the special character. The concept of "escaping" special characters is shared across a variety of computational settings, including markdown and Hypertext Markup Language (HTML).
+- `\` is used to escape the following character when that character is a special character. So, for example, a regular expression that found `.com` would be `\.com` because `.` is a special character that matches any character.
+
 
 > ## Using regular expressions when working with files and directories
 >

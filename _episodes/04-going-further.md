@@ -52,8 +52,5 @@ e.g.
 > - `/m` is for multiline, and controls whether your matches should extend accross line returns.
 
 ## Resources
-- Test regular expressions interactively with regex101.com, RegExr.com or other online regular expressin editors.
-- Visualize them with regexper.com.
-- Test yourself with RegexCrossword.com/ or via the quiz and exercises in this lesson.
-- Learn Regular Expressions with simple, interactive exercises at https://regexone.com/
-- Find a regex friend to consult when you need help.
+
+Check out the resources page https://adyork.github.io/regex-intro/reference.html

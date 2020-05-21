@@ -80,7 +80,7 @@ Other useful special characters are:
 So, what are these going to match?
 
 > ## ^[Oo]rgani.e\w*
-> What will the regular expression `^[Oo]rgani.e\w*` match?
+> What will the regular expression `[Oo]rgani.e\w*` match?
 >
 > > ## Solution
 > > ~~~
@@ -89,7 +89,7 @@ So, what are these going to match?
 > > organifer
 > > Organi2ed111
 > > ~~~
-> > Or, any other string that starts a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e` and zero or more characters from the range `[A-Za-z0-9]`.
+> > Or, any other string that begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e` and zero or more characters from the range `[A-Za-z0-9]`.
 > {: .solution}
 {: .challenge}
 
@@ -103,7 +103,7 @@ So, what are these going to match?
 > > organifer
 > > Organi2ed111
 > > ~~~
-> > Or, any other string that ends a line, begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e` and **at least one or more** characters from the range `[A-Za-z0-9]`.
+> > Or, any other string that begins with a letter `o` in lower or capital case, proceeds with `rgani`, has any character in the 7th position, follows with letter `e` and **at least one or more** characters from the range `[A-Za-z0-9]`.
 > {: .solution}
 {: .challenge}
 
@@ -175,8 +175,6 @@ So, what are these going to match?
 
 ### Live coding demo for anchor characters
 https://regex101.com/r/JQCWIV/5
-
-
 
 ### Exercises
 

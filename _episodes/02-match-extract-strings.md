@@ -91,15 +91,6 @@ What to consider:
 > {: .solution}
 {: .challenge}
 
-> # Regex interoperability
->
-> How do you match strings in different languages, text editors and the command line?
->
-> Languages have various packages and modules for regular expressions.  Regex101.com includes a code generator that will show how your regular expression could be used on your test string with the results printed.
->
-> Try going to https://regex101.com/r/2mr2t3/6 and clicking "Code Genererator" in the left panel then "Python" to get to example code: https://regex101.com/r/2mr2t3/6/codegen?language=python
-{: .callout}
-
 # Exercise finding email addresses using regex101.com
 
 For this exercise, open a browser and go to [https://regex101.com](https://regex101.com).
@@ -135,12 +126,17 @@ Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree
 {: .challenge}
 
 > ## Finish the expression
-> Finish the regular expression to match the whole email address.  Type your answers in chat.
+> Finish the regular expression to match the whole email address.
+> Start with the first part of the expression we came up with https://regex101.com/r/f49JFl/1/
 >
-> The string after the "@" could contain any kind of word character, special character or digit in any combination and length as well as the dash. In addition, we know that it will end with two or three characters after a period (`.`) What expression would capture this. Hint: the `.` is also a regex expression, so you'll have to use the escape `\` to express a literal period. Note: for the string after the period, I did not try to match a character, since those rarely appear in the .xx or .xxx at the end of an email address.
+>  Type your solutions in chat when you are done.
+>
+> Hint 1: The string after the "@" could contain any kind of word character, special character or digit in any combination and length as well as the dash. In addition, we know that it will end with two or three characters after a period (`.`) What expression would capture this?
+>
+> Hint 2: The `.` is also a regex expression, so you'll have to use the escape `\` to express a literal period. Note: for the string after the period, I did not try to match a character, since those rarely appear in the .xx or .xxx at the end of an email address.
 > > ## Solutions
 > > ~~~
-> > [\w.-]+\.[\w]{2,3}
+> > [\w.-]+@[\w.-]+\.[\w]{2,3}
 > > [\w.-]+@[\w.-]+\b
 > > ~~~
 > > See the previous exercise for the explanation of the expression up to the `+`

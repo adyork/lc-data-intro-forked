@@ -26,7 +26,7 @@ Go from simple -> complex and general -> specific when forming regular expressio
 
 You don't have do everything in one expression! This isn't a competition for the largest, most obscure looking expression. You will be able to read your own expressions better if you break up big expressions into several steps with smaller expressions.
 
-That being said, there is a place for convenient "one-liners" in some situations.  For example, this big regular expression pulls out parameter information from netctf files https://regex101.com/r/g8GVfl/5.  It can be used in SED operations on the command line in conjunction with other operations.
+That being said, there is a place for convenient "one-liners" in some situations.  For example, this big regular expression pulls out parameter information from netctf files [https://regex101.com/r/g8GVfl/5](https://regex101.com/r/g8GVfl/5).  It can be used in SED operations on the command line in conjunction with other operations.
 
 ### Document
 Document changes you make with regular expressions in comments, processing notes, or maybe even git commit messages.  Explain to your future self and others why you are making the changes.  It's not always clear from just reading your code.
@@ -53,4 +53,4 @@ e.g.
 
 ## Resources
 
-Check out the resources page https://adyork.github.io/regex-intro/reference.html
+Check out the [resources page](https://adyork.github.io/regex-intro/reference.html)

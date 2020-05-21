@@ -17,7 +17,7 @@ keypoints:
 
 For this exercise, we will be using regex101.com to search our code of conduct for various pieces of information.
 
-Open a browser and go to https://regex101.com/r/e1qcEh/1 which has a copy of the  [swcCoC.md](https://github.com/adyork/regex-intro/tree/gh-pages/data/swcCoC.md) Code of Conduct file loaded as the test string.
+Open a browser and go to [https://regex101.com/r/e1qcEh/1](https://regex101.com/r/e1qcEh/1) which has a copy of the  [swcCoC.md](https://github.com/adyork/regex-intro/tree/gh-pages/data/swcCoC.md) Code of Conduct file loaded as the test string.
 
 For a quick test to see if it's working, type the string `community` into the regular expression box.
 
@@ -127,7 +127,7 @@ Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree
 
 > ## Finish the expression
 > Finish the regular expression to match the whole email address.
-> Start with the first part of the expression we came up with https://regex101.com/r/f49JFl/2
+> Start with the first part of the expression we came up with [https://regex101.com/r/f49JFl/2](https://regex101.com/r/f49JFl/2)
 >
 >  Type your solutions in chat when you are done.
 >

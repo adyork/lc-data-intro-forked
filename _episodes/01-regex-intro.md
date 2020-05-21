@@ -174,7 +174,7 @@ So, what are these going to match?
   - `\bmark` would match `mark` in the beggining of the folder name /home/adyork/<b>mark</b>etsurvey/leftmymark.csv
 
 ### Live coding demo for anchor characters
-https://regex101.com/r/JQCWIV/5
+[https://regex101.com/r/JQCWIV/5](https://regex101.com/r/JQCWIV/5)
 
 ### Exercises
 
@@ -209,7 +209,7 @@ We will put you into small groups in Zoom breakout rooms.  Come up with a soluti
 {: .challenge}
 
 ## Testing on an example
-https://regex101.com/r/2mr2t3/6
+[https://regex101.com/r/2mr2t3/6](https://regex101.com/r/2mr2t3/6)
 
 > ## Using OR to match more than one pattern
 > - `|` means **or**.
@@ -225,7 +225,7 @@ https://regex101.com/r/2mr2t3/6
 > > organifed
 > > ~~~
 > > Or, any other string that begins with a letter `o` in lower or capital case after a word boundary, proceeds with `rgani`, has any character in the 7th position, and end with letter `e`, or any other string that begins with a letter `o` in lower or capital case after a word boundary, proceeds with `rgani`, has any character in the 7th position, follows with letter `e`, and ends with a single character from the range `[A-Za-z0-9]`.
-> > See this example at https://regex101.com/r/2Oama7/1
+> > See this example at [https://regex101.com/r/2Oama7/1](https://regex101.com/r/2Oama7/1)
 > {: .solution}
 {: .challenge}
 

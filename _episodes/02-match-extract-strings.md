@@ -42,6 +42,64 @@ If you look in the box on the right of the screen, you see that the expression m
 {: .challenge}
 
 
+# Exercise finding phone numbers, Using regex101.com
+
+Does this Code of Conduct contain a phone number?
+
+What to consider:
+1. It may or may not have a country code, perhaps starting with a "+".
+2. It will have an area code, potentially enclosed in parentheses.
+3. It may have the sections all separated with a "-".
+
+> ## Start with what you know: find strings of digits
+> Start with what we know, which is the most basic format of a phone number: three digits, a dash, and four digits. How would we write a regex expression that matches this?
+> > ## Solution
+> > ~~~
+> > \d{3}-\d{4}
+> > ~~~
+> > `\d` matches digits
+> >
+> > `{3}` matches 3 digits
+> >
+> > `-` matches the character '-'
+> >
+> > `\d` matches any digit
+> >
+> > `{4}` matches 4 digits.
+> >
+> >This expression should find three matches in the document.
+> {: .solution}
+{: .challenge}
+
+> ## Match a string that includes an area code with a dash
+> Start with what we know, which is the most basic format of a phone number: three digits, a dash, and four digits. How would we expand the expression to include an area code (three digits and a dash)?
+> > ## Solution
+> > ~~~
+> > \d{3}-\d{3}-\d{4}
+> > ~~~
+> > `\d` matches digits
+> >
+> > `{3}` matches 3 digits
+> >
+> > `-` matches the character '-'
+> >
+> > `\d` matches any digit
+> >
+> > `{4}` matches 4 digits.
+> >
+> >This expression should find one match in the document
+> {: .solution}
+{: .challenge}
+
+> # Regex interoperability
+>
+> How do you match strings in different languages, text editors and the command line?
+>
+> Languages have various packages and modules for regular expressions.  Regex101.com includes a code generator that will show how your regular expression could be used on your test string with the results printed.
+>
+> Try going to https://regex101.com/r/2mr2t3/6 and clicking "Code Genererator" in the left panel then "Python" to get to example code: https://regex101.com/r/2mr2t3/6/codegen?language=python
+{: .callout}
+
 # Exercise finding email addresses using regex101.com
 
 For this exercise, open a browser and go to [https://regex101.com](https://regex101.com).
@@ -99,60 +157,3 @@ Open the [swcCoC.md file](https://github.com/LibraryCarpentry/lc-data-intro/tree
 > >
 > {: .solution}
 {: .challenge}
-
-# Exercise finding phone numbers, Using regex101.com
-
-Does this Code of Conduct contain a phone number?
-
-What to consider:
-1. It may or may not have a country code, perhaps starting with a "+".
-2. It will have an area code, potentially enclosed in parentheses.
-3. It may have the sections all separated with a "-".
-
-> ## Start with what you know: find strings of digits
-> Start with what we know, which is the most basic format of a phone number: three digits, a dash, and four digits. How would we write a regex expression that matches this?
-> > ## Solution
-> > ~~~
-> > \d{3}-\d{4}
-> > ~~~
-> > `\d` matches digits
-> >
-> > `{3}` matches 3 digits
-> >
-> > `-` matches the character '-'
-> >
-> > `\d` matches any digit
-> >
-> > `{4}` matches 4 digits.
-> >
-> >This expression should find three matches in the document.
-> {: .solution}
-{: .challenge}
-
-> ## Match a string that includes an area code with a dash
-> Start with what we know, which is the most basic format of a phone number: three digits, a dash, and four digits. How would we expand the expression to include an area code (three digits and a dash)?
-> > ## Solution
-> > ~~~
-> > \d{3}-\d{3}-\d{4}
-> > ~~~
-> > `\d` matches digits
-> >
-> > `{3}` matches 3 digits
-> >
-> > `-` matches the character '-'
-> >
-> > `\d` matches any digit
-> >
-> > `{4}` matches 4 digits.
-> >
-> >This expression should find one match in the document
-> {: .solution}
-{: .challenge}
-
-# Regex interoperability
-
-How do you match strings in different languages, text editors and the command line?
-
-Languages have various packages and modules for regular expressions.  Regex101.com includes a code generator that will show how your regular expression could be used on your test string with the results printed.
-
-Try going to https://regex101.com/r/2mr2t3/6 and clicking "Code Genererator" in the left panel then "Python" to get to example code: https://regex101.com/r/2mr2t3/6/codegen?language=python
